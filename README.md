@@ -1,6 +1,6 @@
 ### Human Activity Recognition Using WiFiSignal
 
-This project is focused on developing a crowd counting system using WiFi CSI data collected from ESP32 microcontroller. The system utilizes machine learning and deep learning techniques to accurately estimate the number of people in a given area. 
+The product **WiFiWhiz** is focused on developing a crowd counting system using WiFi CSI data collected from ESP32 microcontroller. The system utilizes machine learning and deep learning techniques to accurately estimate the number of people in a given area. 
 **The aim of this project is to provide an accurate and reliable crowd counting solution that can be used in various industries, such as retail, transportation, and smart manufacturing.**
 
 The project utilizes several machine learning classifiers, including *Decision Tree, Gaussian Naive Bayes, Multi Layer Perceptron, and K-Neighbours*. However, due to the high-dimensional nature of the data, these classifiers did not perform as well as other classifiers. Therefore, the project also includes the use of *Linear Discriminant, Ridge, and Random Forest classifiers*, which were able to achieve better results.
