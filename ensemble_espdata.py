@@ -73,10 +73,12 @@ def get_accuracy_data():
     # Calculate accuracy of the model
     cv = KFold(n_splits=10, random_state=42, shuffle=True)
     scores = cross_val_score(ensemble, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
-    accuracy = mean(scores)
+    accuracy_mean = np.mean(scores)
+    accuracy_std = np.std(scores)
 
     # Return results
-    return {"accuracy": accuracy, "potential_savings": potential_savings}
+    return {"mean": accuracy_mean, "std": accuracy_std, "potential_savings": potential_savings}
+
 
 
 
@@ -107,4 +109,5 @@ def get_energy_consumption_data():
     rmse = np.sqrt(metrics.mean_squared_error(y_test, E2_pred))
 
     # Return results
-    return {"rmse": rmse, "potential_savings": potential_savings}
+    return {"mean": E2_pred.mean(), "std": E2_pred.std(), "rmse": rmse, "potential_savings": potential_savings}
+
