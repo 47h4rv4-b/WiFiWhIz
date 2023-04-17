@@ -73,11 +73,12 @@ def get_accuracy_data():
     # Calculate accuracy of the model
     cv = KFold(n_splits=10, random_state=42, shuffle=True)
     scores = cross_val_score(ensemble, X, y, scoring='accuracy', cv=cv, n_jobs=-1)
-    accuracy_mean = np.mean(scores)
-    accuracy_std = np.std(scores)
+    accuracy_mean = round(np.mean(scores) * 100, 2)
+    accuracy_std = round(np.std(scores) * 100, 2)
 
     # Return results
     return {"mean": accuracy_mean, "std": accuracy_std, "potential_savings": potential_savings}
+
 
 
 
